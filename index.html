@@ -78,7 +78,34 @@
 &lt;value&gt; .=. &lt;float&gt;
 &lt;info&gt; .=. &lt;string&gt;</pre>
 			where the target value and each of the feature/value pairs are 
-			separated by a space character.
+			separated by a space character. The <pre>&lt;info&gt;</pre> field contains
+			the URL from where the example cames from and the &lt;s,p,o&gt; RDF triple.
+			
+			<h2>Feature list</h2>
+			<ol>
+				<li>how many tables are in the page</li>
+				<li>which table the triples came from</li>
+				<li>how many rows are in the table</li>
+				<li>how many columns are in the table</li>
+				<li>which column number the subject came from</li>
+				<li>which column number the object came from</li>
+				<li>is the predicate of the triple in the subject headers</li>
+				<li>is the predicate of the triple in the object headers</li>
+				<li>is the triple new or old (for DBpedia)</li>
+				<li>was extracted from body relations or article relations</li>
+				<li>how many rows the relation held for in this table</li>
+				<li>commonness of the predicate in DBpedia</li>
+				<li>ratio different subjects for this predicate</li>
+				<li>ratio different objects for this predicate</li>
+				<li>multiplicity ratio of predicate</li>
+				<li>how many resources there are in subject cell</li>
+				<li>what is the string length in subject cell</li>
+				<li>how many bullets of lists contains subject cell</li>
+				<li>how many resources there are in object cell</li>
+				<li>what is the string length in object cell</li>
+				<li>how many bullets of lists contains object cell</li>
+				<li>normalized frequency of a relation within the table</li>
+			</ol>
         </section>
 
         <footer>
