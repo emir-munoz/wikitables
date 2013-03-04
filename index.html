@@ -68,13 +68,13 @@
 			<h2>Machine learning</h2>
 			<p>We make available in this repository the train and test sets 
 			used to train our models. These can be used to validate our results 
-			and try new machine learning schemas. The files shows the feature 
-			vectors for each example which are formatted using SVMLight format.
+			and try new machine learning schemas. Files contain a feature 
+			vector for an example per line which is formatted using SVMLight format.
 			</p>
 			<pre class="prettyprint lang-basic" style="">
 &lt;line&gt; .=. &lt;target&gt; &lt;feature&gt;:&lt;value&gt; &lt;feature&gt;:&lt;value&gt; ... &lt;feature&gt;:&lt;value&gt; # &lt;info&gt;
-&lt;target&gt; .=. +1 | -1 | 0 | &lt;float&gt; 
-&lt;feature&gt; .=. &lt;integer&gt; | "qid"
+&lt;target&gt; .=. +1 | -1
+&lt;feature&gt; .=. &lt;integer&gt;
 &lt;value&gt; .=. &lt;float&gt;
 &lt;info&gt; .=. &lt;string&gt;</pre>
 			where the target value and each of the feature/value pairs are 
