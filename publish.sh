@@ -5,7 +5,7 @@ BRANCH="$(git rev-parse --symbolic --abbrev-ref $(git symbolic-ref HEAD))"
 ADD="$(git add -A .)"
 test -x "$ADD" && exec "$ADD" "$@"
 COMMIT="$(git commit -m 'Updates wikitable')"
-exec "$COMMIT" "$@"
+test -x "$COMMIT" && exec "$COMMIT" "$@"
 
 git push origin "$BRANCH"
 
