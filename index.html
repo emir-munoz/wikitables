@@ -71,14 +71,12 @@
 			and try new machine learning schemas. The files shows the feature 
 			vectors for each example which are formatted using SVMLight format.
 			</p>
-			<pre>
-				<code>
+			<pre class="prettyprint lang-basic">
 				&lt;line> .=. &lt;target> &lt;feature>:&lt;value> &lt;feature>:&lt;value> ... &lt;feature>:&lt;value> # &lt;info>
 				&lt;target> .=. +1 | -1 | 0 | &lt;float> 
 				&lt;feature> .=. &lt;integer> | "qid"
 				&lt;value> .=. &lt;float>
 				&lt;info> .=. &lt;string>
-				</code>
 			</pre>
 			where the target value and each of the feature/value pairs are 
 			separated by a space character.
