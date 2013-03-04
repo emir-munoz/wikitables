@@ -1,0 +1,6 @@
+<line> .=. <target> <feature>:<value> <feature>:<value> ... <feature>:<value> # <info>
+<target> .=. +1 | -1 | 0 | <float> 
+<feature> .=. <integer> | "qid"
+<value> .=. <float>
+<info> .=. <string> 
+
