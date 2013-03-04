@@ -61,6 +61,23 @@
 			estimated accuracy of 50%, and subsequently boost that accuracy
 			to 65% by using machine learning methods to classify
 			19 million triples that are deemed likely to be correct.</p>
+			
+			<h2>Machine learning</h2>
+			<p>We make available in this repository the train and test sets 
+			used to train our models. These can be used to validate our results 
+			and try new machine learning schemas. The files shows the feature 
+			vectors for each example which are formatted using SVMLight format.
+			
+			<pre>
+				<line> .=. <target> <feature>:<value> <feature>:<value> ... <feature>:<value> # <info>
+				<target> .=. +1 | -1 | 0 | <float> 
+				<feature> .=. <integer> | "qid"
+				<value> .=. <float>
+				<info> .=. <string>
+			</pre>
+			where the target value and each of the feature/value pairs are 
+			separated by a space character.
+			</p>
         </section>
 
         <footer>
