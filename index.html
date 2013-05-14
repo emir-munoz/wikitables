@@ -21,7 +21,8 @@
 				<div class="nav-collapse collapse">
 					<ul class="nav">
 						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#about">About</a></li>
+						<li><a href="http://deri-srvgal36.nuigalway.ie:8080/wikitables-demo/">Demo</a></li>
+						<li><a href="https://github.com/emir-munoz/wikitables">GitHub</a></li>
 						<li><a href="#contact">Contact</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
@@ -112,6 +113,67 @@
 &lt;info&gt; .=. &lt;string&gt;</pre>
 					<p>where the target value and each of the feature/value pairs are separated by a space character. The <code>&lt;info&gt;</code> field contains
 					the URL from where the example cames from and the <code>&lt;s,p,o&gt;</code> RDF triple.</p>
+					
+					<h2>Example</h2>
+					<p>Two examples of feature vector for extracted RDF triples.
+					<pre class="prettyprint lang-basic" style="font-size:10pt;">
+-1 1:2 2:2 3:15 4:17 5:0.88235 6:238 7:8 8:4 9:10 10:26 11:0.384615 12:10 13:12 14:0.83333 15:19 16:3 17:0.165405 18:0.198375 19:0.162472 20:11.202128 21:1 22:2 23:0.5 24:3 25:11 26:0 27:0 28:0.0 29:0.0 30:0.0 31:3 32:0.2 33:20 34:0.15789 35:3 36:0.15789 37:2 38:1 # Hans_Herrmann <http://dbpedia.org/resource/1959_French_Grand_Prix> <http://dbpedia.org/ontology/firstDriverTeam> <http://dbpedia.org/resource/Inline-four_engine>
+1 1:5 2:2 3:7 4:7 5:1.0 6:4 7:5 8:2 9:6 10:6 11:1.0 12:6 13:6 14:1.0 15:6 16:1 17:0.269023 18:0.345435 19:0.292203 20:2.860449 21:1 22:1 23:1.0 24:30 25:11 26:0 27:0 28:0.0 29:0.0 30:0.0 31:1 32:0.142857 33:2 34:0.16667 35:1 36:0.16667 37:2 38:1 # Argentine_Primera_Divisi'C3'B3n <http://dbpedia.org/resource/Estadio_Diego_Armando_Maradona> <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/La_Paternal,_Buenos_Aires>
+					</pre>
+					</p>
+					
+					<h2>List of Features</h2>
+					<h2>List of features</h2>
+					<p>For each instance we extract the following list of features used for the machine-learning models.</p>
+					<ol>
+						<li>N° of tables</li>
+						<li>table id in article</li>
+						<li>N° of rows</li>
+						<li>N° of columns</li>
+						<li>ratio: (3)/(4)</li>
+						<li>total relations extracted</li>
+						<li>subject column id</li>
+						<li>object column id</li>
+						<li>N° of entities in subject column</li>
+						<li>N° of entities in object column</li>
+						<li>ratio: (9)/(10)</li>
+						<li>N° of unique entities in subject column</li>
+						<li>N° of unique entities in object column</li>
+						<li>ratio: (12)/(13)</li>
+						<li>potential relations</li>
+						<li>unique potential relations</li>
+						<li>normalised triple count</li>
+						<li>normalised unique subject count</li>
+						<li>normalised unique object count</li>
+						<li>ratio: (18)/(19)</li>
+						<li>N° of entities in subject cell</li>
+						<li>N° of entities in object cell</li>
+						<li>ratio: (21)/(22)</li>
+						<li>string length in subject cell</li>
+						<li>string length in object cell</li>
+						<li>formatting present in subject cell</li>
+						<li>formatting present in object cell</li>
+						<li>string similarity for predicate and subject header</li>
+						<li>string similarity for predicate and object header</li>
+						<li>maximum between (28) and (29)</li>
+						<li>N° of rows where relation holds</li>
+						<li>ratio: (31)/(3)</li>
+						<li>N° of potential relations held</li>
+						<li>ratio: (33)/(15)</li>
+						<li>N° of unique potential relations held</li>
+						<li>ratio: (35)/(16)</li>
+						<li>from article or body relation</li>
+						<li>exists in DBpedia</li>
+					</ol>
+				</section>
+				<section id="demo">
+					<div class="page-header">
+						<h1>3. Demostration</h1>
+					</div>
+					<p>We have developed an on-line <a href="http://deri-srvgal36.nuigalway.ie:8080/wikitables-demo" target="_blank">demo</a> of our approach, 
+					where we extract RDF relations for a given Wikipedia article. Our system receives a URL as parameter and uses a selected
+					(or default) machine-learning model to filter the best candidate triples.
+					</p>
 				</section>
 				<section id="contact">
 					<div class="page-header">
