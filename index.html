@@ -45,176 +45,84 @@
 						<li class="active"><a href="#">Home</a></li>
 						<li><a href="#about">About</a></li>
 						<li><a href="#contact">Contact</a></li>
-<!--
-						<li class="dropdown">
-							<a data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown <b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Action</a></li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
-								<li class="divider"></li>
-								<li class="nav-header">Nav header</li>
-								<li><a href="#">Separated link</a></li>
-								<li><a href="#">One more separated link</a></li>
-							</ul>
-						</li>
--->
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div>
 		</div>
 	</div>
 	
-    <div id="container">
-		<div class="hero-unit">
-			<h1>Extracting RDF Relations from Wikipedia’s Tables</h1>
-			<h2>Abstract</h2>
-          <p>We propose that existing RDF knowledge-bases can be leveraged to extract facts (in the form of RDF triples) from relational HTML tables on the Web with high accuracy. 
-In particular, we propose methods using the DBpedia knowledge-base to extract facts from tables embedded in Wikipedia articles (henceforth "Wikitables"), effectively
-enriching DBpedia with additional triples. We first survey the Wikitables from a recent dump of Wikipedia to see how much raw data can potentially be exploited by our methods.
-We then propose methods to extract RDF from these tables: we map table cells to DBpedia entities and, for cells in the same row, we isolate a set of candidate 
-relationships based on existing information in DBpedia for other rows. To improve accuracy, we investigate various machine learning methods to classify extracted triples
-as correct or incorrect. We ultimately extract 7.9 million unique novel triples from one million Wikitables at an estimated precision of 81.5%.
-			</p>
-<!--
-			<p><a class="btn btn-primary btn-large" href="#">Learn more »</a></p>
--->
+    <div id="container-fluid">
+		<div class="row-fluid">
+			<div class="span3">
+				<div class="well sidebar-nav">
+					<ul class="nav nav-list">
+						<li class="nav-header">Sidebar</li>
+						<li class="active"><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li class="nav-header">Sidebar</li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li class="nav-header">Sidebar</li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+					</ul>
+				</div><!--/.well -->
+			</div>
+			<div class="span9">
+				<div class="hero-unit">
+					<h1>Hello, world!</h1>
+					<p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+					<p><a class="btn btn-primary btn-large" href="#">Learn more »</a></p>
+				</div>
+				<div class="row-fluid">
+					<div class="span4">
+					  <h2>Heading</h2>
+					  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+					  <p><a href="#" class="btn">View details »</a></p>
+					</div><!--/span-->
+					<div class="span4">
+						<h2>Heading</h2>
+						<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+						<p><a href="#" class="btn">View details »</a></p>
+					</div><!--/span-->
+					<div class="span4">
+						<h2>Heading</h2>
+						<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+						<p><a href="#" class="btn">View details »</a></p>
+					</div><!--/span-->
+				</div><!--/row-->
+				<div class="row-fluid">
+					<div class="span4">
+					  <h2>Heading</h2>
+					  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+					  <p><a href="#" class="btn">View details »</a></p>
+					</div><!--/span-->
+					<div class="span4">
+					  <h2>Heading</h2>
+					  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+					  <p><a href="#" class="btn">View details »</a></p>
+					</div><!--/span-->
+					<div class="span4">
+					  <h2>Heading</h2>
+					  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+					  <p><a href="#" class="btn">View details »</a></p>
+					</div><!--/span-->
+				</div><!--/row-->
+			</div>
 		</div>
-		
-      <div class="inner">
-		  
-<!--
-        <header>
-          <h1>Wikitables</h1>
-          <h2>Extracting RDF Relations from Wikipedia’s Tables</h2>
-        </header>
--->
-
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/emir-munoz/wikitables/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/emir-munoz/wikitables/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/emir-munoz/wikitables" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
-
-        <hr>
-
-        <section id="main_content">
-          <h1>Extracting RDF Relations from Wikipedia’s Tables</h1>
-          <h2>Abstract</h2>
-          <p>We propose that existing RDF knowledge-bases can be leveraged to extract facts (in the form of RDF triples) from relational HTML tables on the Web with high accuracy. 
-In particular, we propose methods using the DBpedia knowledge-base to extract facts from tables embedded in Wikipedia articles (henceforth "Wikitables"), effectively
-enriching DBpedia with additional triples. We first survey the Wikitables from a recent dump of Wikipedia to see how much raw data can potentially be exploited by our methods.
-We then propose methods to extract RDF from these tables: we map table cells to DBpedia entities and, for cells in the same row, we isolate a set of candidate 
-relationships based on existing information in DBpedia for other rows. To improve accuracy, we investigate various machine learning methods to classify extracted triples
-as correct or incorrect. We ultimately extract 7.9 million unique novel triples from one million Wikitables at an estimated precision of 81.5%.
-			</p>
-			
-			<h2>Machine learning</h2>
-			<p>We make available in this repository the training and testing sets 
-			used to built our models comprising 1,000 examples altogether. 
-			These can be used to validate our results 
-			and try new machine learning schemas. Files contain a feature 
-			vector for an example per line which is formatted using SVMLight format.
-			<pre class="prettyprint lang-basic" style="font-size:10pt;">
-&lt;line&gt; .=. &lt;target&gt; &lt;feature&gt;:&lt;value&gt; &lt;feature&gt;:&lt;value&gt; ... &lt;feature&gt;:&lt;value&gt; # &lt;info&gt;
-&lt;target&gt; .=. +1 | -1
-&lt;feature&gt; .=. &lt;integer&gt;
-&lt;value&gt; .=. &lt;float&gt;
-&lt;info&gt; .=. &lt;string&gt;</pre>
-			where the target value and each of the feature/value pairs are 
-			separated by a space character. The <code>&lt;info&gt;</code> field contains
-			the URL from where the example cames from and the <code>&lt;s,p,o&gt;</code> RDF triple.
-			</p>
-			
-			<h2>Example</h2>
-			<p>
-			Two examples of feature vector for extracted RDF triples.
-			<pre class="prettyprint lang-basic" style="font-size:10pt;">
-1	1:2	2:2	3:59	4:7	5:1	6:-1	7:0	8:-1	9:1	10:1	11:2	12:4.0E-6	13:2.5E-5	14:2.5E-5	15:0.850877	16:1	17:16	18:0	19:0	20:0	21:0	22:0.0338983	#	http://en.wikipedia.org/wiki/Miss_Alabama_USA	&lt;http://dbpedia.org/resource/Sylvia_Hitchcock&gt;	&lt;http://dbpedia.org/property/competitions&gt;	&lt;http://dbpedia.org/resource/Miss_Alabama_USA&gt;
--1	1:3	2:3	3:10	4:7	5:0	6:6	7:0	8:0	9:1	10:2	11:1	12:2.79E-4	13:0.002127	14:7.7E-4	15:2.346679	16:1	17:14	18:0	19:3	20:256	21:0	22:0.1	#	http://en.wikipedia.org/wiki/United_States_Congress_members_killed_or_wounded_in_office	&lt;http://dbpedia.org/resource/Josiah_Bushnell_Grinnell&gt;	&lt;http://dbpedia.org/ontology/residence&gt;	&lt;http://dbpedia.org/resource/Unconditional_Union_Party&gt;
-			</pre>
-			</p>
-			
-			<h2>List of features</h2>
-			<p>For each instance we extract the following list of features used for the machine-learning models.</p>
-			<ol>
-				<li>N° of tables</li>
-				<li>table id in article</li>
-				<li>N° of rows</li>
-				<li>N° of columns</li>
-				<li>ratio: (3)/(4)</li>
-				<li>total relations extracted</li>
-				<li>subject column id</li>
-				<li>object column id</li>
-				<li>N° of entities in subject column</li>
-				<li>N° of entities in object column</li>
-				<li>ratio: (9)/(10)</li>
-				<li>N° of unique entities in subject column</li>
-				<li>N° of unique entities in object column</li>
-				<li>ratio: (12)/(13)</li>
-				<li>potential relations</li>
-				<li>unique potential relations</li>
-				<li>normalised triple count</li>
-				<li>normalised unique subject count</li>
-				<li>normalised unique object count</li>
-				<li>ratio: (18)/(19)</li>
-				<li>N° of entities in subject cell</li>
-				<li>N° of entities in object cell</li>
-				<li>ratio: (21)/(22)</li>
-				<li>string length in subject cell</li>
-				<li>string length in object cell</li>
-				<li>formatting present in subject cell</li>
-				<li>formatting present in object cell</li>
-				<li>string similarity for predicate and subject header</li>
-				<li>string similarity for predicate and object header</li>
-				<li>maximum between (28) and (29)</li>
-				<li>N° of rows where relation holds</li>
-				<li>ratio: (31)/(3)</li>
-				<li>N° of potential relations held</li>
-				<li>ratio: (33)/(15)</li>
-				<li>N° of unique potential relations held</li>
-				<li>ratio: (35)/(16)</li>
-				<li>from article or body relation</li>
-				<li>exists in DBpedia</li>
-			</ol>
-			
-			<h2>Demo</h2>
-			<p>We have developed an on-line <a href="http://deri-srvgal36.nuigalway.ie:8080/wikitables-demo" target="_blank">demo</a> of our approach, 
-			where we extract RDF relations for a given Wikipedia article. Our system receives a URL as parameter and uses a selected
-			(or default) machine-learning model to filter the best candidate triples.
-			</p>
-			
-			<hr>
-			
-			<h2>Contact</h2>
-			<p>Please do not hesitate to contact us if you have any further questions about this project:<br/>
-				<a href="mailto:emir.munoz at deri dot org">
-					emir.munoz<img src="./images/at.gif" alt="at">deri<span>.</span>org
-				</a>
-				&nbsp;and&nbsp;
-				<a href="mailto:aidan.hogan at deri dot org">
-					aidan.hogan<img src="./images/at.gif" alt="at">deri<span>.</span>org
-				</a>
-				<br/><br/>
-				<img src="./images/DERI_brandmark_rgb.jpg" height="60" title="Digital Enterprise Research Institute"/>
-				<img src="./images/nuig_logo.png" height="60" title="National University of Ireland"/><br>
-				<a id="deri-logo" href="http://deri.ie">Digital Enterprise Research Institute</a><br/>
-				<a id="nuig-logo" href="http://www.nuigalway.ie">National University of Ireland</a><br/>
-				Galway, Ireland
-			</p>
-        </section>
-
-        <footer>
-          Wikitables is maintained by <a href="https://github.com/emir-munoz">emir-munoz</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
-        
-      </div>
-      <hr>
+		<hr>
 		<footer>
 			<p>© Emir Mu&ntilde; 2013</p>
 		</footer>
     </div>
+    
     <script src="http://code.jquery.com/jquery.js"></script>
 <!--
     <script src="js/bootstrap.js"></script>
