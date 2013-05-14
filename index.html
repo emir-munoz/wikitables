@@ -12,17 +12,75 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap-responsive.css">
     <title>Wikitables by Emir Mu&ntilde;oz</title>
   </head>
 
   <body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="#" class="brand">WikiTables</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li class="active"><a href="#">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#contact">Contact</a></li>
+<!--
+						<li class="dropdown">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">Something else here</a></li>
+								<li class="divider"></li>
+								<li class="nav-header">Nav header</li>
+								<li><a href="#">Separated link</a></li>
+								<li><a href="#">One more separated link</a></li>
+							</ul>
+						</li>
+-->
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
+	</div>
+	
     <div id="container">
+		<div class="hero-unit">
+			<h1>Extracting RDF Relations from Wikipedia’s Tables</h1>
+			<h2>Abstract</h2>
+          <p>We propose that existing RDF knowledge-bases can be leveraged to extract facts (in the form of RDF triples) from relational HTML tables on the Web with high accuracy. 
+In particular, we propose methods using the DBpedia knowledge-base to extract facts from tables embedded in Wikipedia articles (henceforth "Wikitables"), effectively
+enriching DBpedia with additional triples. We first survey the Wikitables from a recent dump of Wikipedia to see how much raw data can potentially be exploited by our methods.
+We then propose methods to extract RDF from these tables: we map table cells to DBpedia entities and, for cells in the same row, we isolate a set of candidate 
+relationships based on existing information in DBpedia for other rows. To improve accuracy, we investigate various machine learning methods to classify extracted triples
+as correct or incorrect. We ultimately extract 7.9 million unique novel triples from one million Wikitables at an estimated precision of 81.5%.
+			</p>
+<!--
+			<p><a class="btn btn-primary btn-large" href="#">Learn more »</a></p>
+-->
+		</div>
+		
       <div class="inner">
 		  
+<!--
         <header>
           <h1>Wikitables</h1>
           <h2>Extracting RDF Relations from Wikipedia’s Tables</h2>
         </header>
+-->
 
         <section id="downloads" class="clearfix">
           <a href="https://github.com/emir-munoz/wikitables/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
