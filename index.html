@@ -30,10 +30,10 @@
     <link rel="stylesheet" href="css/bootstrap-responsive.css">
   </head>
 
-  <body>
+  <body data-target=".bs-docs-sidebar" data-spy="scroll" data-twttr-rendered="true">
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
-			<div class="container">
+			<div class="container">		
 				<button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -46,16 +46,16 @@
 						<li><a href="#about">About</a></li>
 						<li><a href="#contact">Contact</a></li>
 					</ul>
-				</div>/.nav-collapse 
+				</div><!--/.nav-collapse -->
 			</div>
 		</div>
 	</div>
 	
-    <div class="container-fluid">
-		<div class="row-fluid">
+    <div class="container">
+		<div class="row">
 			<div class="span3 bs-docs-sidebar">
 				<!--<div class="well sidebar-nav">-->
-					<ul class="nav nav-list bs-docs-sidenav affix">
+					<ul class="nav nav-list bs-docs-sidenav affix-top">
 						<li class="nav-header">Wikitables</li>
 						<li class="active"><a href="#introduction">Introduction</a></li>
 						<li><a href="#packages">Packages</a></li>
@@ -133,14 +133,15 @@
 					<p>where the target value and each of the feature/value pairs are separated by a space character. The <code>&lt;info&gt;</code> field contains
 					the URL from where the example cames from and the <code>&lt;s,p,o&gt;</code> RDF triple.</p>
 				</section>
-			</div>
-		</div>
-		<hr>
-		<footer>
-			<p>© Emir Mu&ntilde; 2013</p>
-		</footer>
-    </div>
+			</div><!-- span9 -->
+		</div><!-- row -->
+	</div><!-- container -->
+	<hr>
+	<footer>
+		<p>© Emir Mu&ntilde;oz 2013</p>
+	</footer>
     
+    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
     <script src="http://code.jquery.com/jquery.js"></script>
 <!--
     <script src="js/bootstrap.js"></script>
@@ -157,5 +158,6 @@
 	<script src="js/bootstrap-collapse.js"></script>
 	<script src="js/bootstrap-carousel.js"></script>
 	<script src="js/bootstrap-typeahead.js"></script>
+	<script src="js/bootstrap-affix.js"></script>
   </body>
 </html>
