@@ -6,23 +6,19 @@
 	<meta name="author" content="Emir Mu&ntilde;oz">
 	<meta name="keywords" content="Wikipedia, Wikitables, DBpedia, RDF, Triple, Data Extraction, DERI">
 	<meta name="description" content="Extracting RDF Relations from Wikipedia’s Tables">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    
-    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=basic&skin=desert"></script>
-    
     <title>Wikitables by Emir Mu&ntilde;oz</title>
   </head>
 
   <body>
     <div id="container">
       <div class="inner">
-
+		  
         <header>
           <h1>Wikitables</h1>
           <h2>Extracting RDF Relations from Wikipedia’s Tables</h2>
@@ -117,7 +113,7 @@ as correct or incorrect. We ultimately extract 7.9 million unique novel triples 
 			</ol>
 			
 			<h2>Demo</h2>
-			<p>We have developed an on-line <a href="http://deri-srvgal36.nuigalway.ie:8080/wikitables-demo-0.1.0/">demo</a> of our approach, 
+			<p>We have developed an on-line <a href="http://deri-srvgal36.nuigalway.ie:8080/wikitables-demo" target="_blank">demo</a> of our approach, 
 			where we extract RDF relations for a given Wikipedia article. Our system receives a URL as parameter and uses a selected
 			(or default) machine-learning model to filter the best candidate triples.
 			</p>
@@ -133,7 +129,7 @@ as correct or incorrect. We ultimately extract 7.9 million unique novel triples 
 				<a href="mailto:aidan.hogan at deri dot org">
 					aidan.hogan<img src="./images/at.gif" alt="at">deri<span>.</span>org
 				</a>
-				<br/>
+				<br/><br/>
 				<img src="./images/DERI_brandmark_rgb.jpg" height="60" title="Digital Enterprise Research Institute"/>
 				<img src="./images/nuig_logo.png" height="60" title="National University of Ireland"/><br>
 				<a id="deri-logo" href="http://deri.ie">Digital Enterprise Research Institute</a><br/>
@@ -149,5 +145,7 @@ as correct or incorrect. We ultimately extract 7.9 million unique novel triples 
         
       </div>
     </div>
+    <script src="http://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
   </body>
 </html>

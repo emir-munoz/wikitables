@@ -1,0 +1,7 @@
+java -jar -Xmx3G nxparser-1.2.3.jar Sort -i dbpedia38.en.nq.gz -igz -o dbpedia38.en.sopc.nq.gz -ogz -re 0213 2> sort.sopc.log
+
+java -jar -Xmx3G lodpeas-build-0.1-dev.jar BuildIndex -i dbpedia38.en.sopc.nq.gz -igz -k 2 -oi dbpedia38.en.ni -os dbpedia38.en.sp 2> index.sopc.log 
+
+java -jar -Xmx3G nxparser-1.2.3.jar Sort -i dbpedia38.labels.nq.gz -igz -o dbpedia38.labels.os.nq.gz -ogz -re 20 2> sort.lab.os.log
+
+java -jar -Xmx3G lodpeas-build-0.1-dev.jar BuildIndex -i dbpedia38.labels.os.nq.gz -igz -k 1 -oi labels.en.ni -os labels.en.sp 2> index.lab.os.log 
