@@ -60,58 +60,57 @@
 						<li class="active"><a href="#">Link</a></li>
 						<li><a href="#">Link</a></li>
 						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
 						<li class="nav-header">Sidebar</li>
 						<li><a href="#">Link</a></li>
 						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-						<li class="nav-header">Sidebar</li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
+						<li class="nav-header">Downloads</li>
+						<li><a href="https://github.com/emir-munoz/wikitables/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a></li>
+						<li><a href="https://github.com/emir-munoz/wikitables/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a></li>
+						<li><a href="https://github.com/emir-munoz/wikitables" id="view-on-github" class="button"><span>View on GitHub</span></a></li>
 					</ul>
 				</div><!--/.well -->
 			</div>
 			<div class="span9">
-				<div class="hero-unit">
-					<h1>Hello, world!</h1>
-					<p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-					<p><a class="btn btn-primary btn-large" href="#">Learn more »</a></p>
-				</div>
+				<h1>Extracting RDF Relations from Wikipedia’s Tables</h1>
+				<h2>Abstract</h2>
+				<p>We propose that existing RDF knowledge-bases can be leveraged to extract facts (in the form of RDF triples) from relational HTML tables on the Web with high accuracy. 
+					In particular, we propose methods using the DBpedia knowledge-base to extract facts from tables embedded in Wikipedia articles (henceforth "Wikitables"), effectively
+					enriching DBpedia with additional triples. We first survey the Wikitables from a recent dump of Wikipedia to see how much raw data can potentially be exploited by our methods.
+					We then propose methods to extract RDF from these tables: we map table cells to DBpedia entities and, for cells in the same row, we isolate a set of candidate 
+					relationships based on existing information in DBpedia for other rows. To improve accuracy, we investigate various machine learning methods to classify extracted triples
+					as correct or incorrect. We ultimately extract 7.9 million unique novel triples from one million Wikitables at an estimated precision of 81.5%.
+				</p>
 				<div class="row-fluid">
 					<div class="span4">
-					  <h2>Heading</h2>
-					  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+					  <h2>Wikitables-demo</h2>
+					  <p>The web application built using Spring MVC. </p>
 					  <p><a href="#" class="btn">View details »</a></p>
 					</div><!--/span-->
 					<div class="span4">
-						<h2>Heading</h2>
-						<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+						<h2>Wikitables-engine</h2>
+						<p>The core or engine that performs the extraction of the RDF triples. </p>
 						<p><a href="#" class="btn">View details »</a></p>
 					</div><!--/span-->
 					<div class="span4">
-						<h2>Heading</h2>
-						<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+						<h2>Wikitables-ml</h2>
+						<p>For a given set of extracted triples, this performs the prediction and returns correct or incorrect for each triple. </p>
 						<p><a href="#" class="btn">View details »</a></p>
 					</div><!--/span-->
 				</div><!--/row-->
 				<div class="row-fluid">
 					<div class="span4">
-					  <h2>Heading</h2>
-					  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+					  <h2>Wikitables-dal</h2>
+					  <p>Contains the classes that represent the model of the entire application. </p>
 					  <p><a href="#" class="btn">View details »</a></p>
 					</div><!--/span-->
 					<div class="span4">
-					  <h2>Heading</h2>
-					  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+					  <h2>Wikitables-evaluation</h2>
+					  <p>Extract statistics from DBpedia to help in the features definition. </p>
 					  <p><a href="#" class="btn">View details »</a></p>
 					</div><!--/span-->
 					<div class="span4">
-					  <h2>Heading</h2>
-					  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+					  <h2>Wikititles-index</h2>
+					  <p>An index used to fill the autocomplete data in the web application. </p>
 					  <p><a href="#" class="btn">View details »</a></p>
 					</div><!--/span-->
 				</div><!--/row-->
