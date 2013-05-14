@@ -83,6 +83,10 @@
 					</p>
 				</section>
 				<section id="packages">
+					<div class="page-header">
+						<h1>1. Packages of the system</h1>
+					</div>
+					<p class="lead">The system is modularized into the following packages: </p>
 					<div class="row-fluid">
 						<div class="span4">
 						  <h2>Wikitables-demo</h2>
@@ -111,6 +115,21 @@
 						  <p>An index used to fill the autocomplete data in the web application. </p>
 						</div><!--/span-->
 					</div><!--/row-->
+				</section>
+				<section id="machine-learning">
+					<div class="page-header">
+						<h1>2. Machine Learning</h1>
+					</div>
+					<p class="lead">We make available in this repository the training and testing sets used to built our models comprising 1,000 examples altogether. 
+					These can be used to validate our results and try new machine learning schemas. Files contain a feature vector for an example per line which is formatted using SVMLight format.</p>
+					<pre class="prettyprint lang-basic" style="font-size:10pt;">
+&lt;line&gt; .=. &lt;target&gt; &lt;feature&gt;:&lt;value&gt; &lt;feature&gt;:&lt;value&gt; ... &lt;feature&gt;:&lt;value&gt; # &lt;info&gt;
+&lt;target&gt; .=. +1 | -1
+&lt;feature&gt; .=. &lt;integer&gt;
+&lt;value&gt; .=. &lt;float&gt;
+&lt;info&gt; .=. &lt;string&gt;</pre>
+					<p>where the target value and each of the feature/value pairs are separated by a space character. The <code>&lt;info&gt;</code> field contains
+					the URL from where the example cames from and the <code>&lt;s,p,o&gt;</code> RDF triple.</p>
 				</section>
 			</div>
 		</div>
