@@ -13,7 +13,7 @@ as correct or incorrect. We ultimately extract 7.9 million unique novel triples 
 
 ## Packages
 
-The code is modularized in the following packages:
+The code is modularized into the following packages:
 
 ### wikitables-dal-release-1.0
 Contains the classes that represent the model of the entire application.

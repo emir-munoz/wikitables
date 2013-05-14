@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="wikirdf" basedir=".">
+<property name="name" value="wikirdf"/>
+<property name="version" value="0.1-dev"/>
+<property name="src.dir" value="src"/>
+<property name="build.dir" location="build" />
+<property name="dist.dir" value="dist"/>
+<property name="lib.dir" value="lib"/>
+<property name="docs.dir" value="javadoc"/>
+<property name="main-class" value="org.deri.wiki.dbstats.cli.Main"/>
+	
+<!-- Add lib folder to build path -->	
+<path id="classpath">
+	<fileset dir="${lib.dir}">
+	<include name="*.jar"/>
+	</fileset>
+</path>	
+	
+<!-- Deletes the existing build, docs and dist directory-->
+<target name="clean">
+<delete dir="${build.dir}" />
+<delete dir="${docs.dir}" />
+<delete dir="${dist.dir}" />
+</target>	
+	
+<!-- Creates the  build, docs and dist directory-->
+<target name="makedir">
+<mkdir dir="${build.dir}" />
+<mkdir dir="${docs.dir}" />
+<mkdir dir="${dist.dir}" />
+</target>
+	
+<!-- Compiles the java code -->
+<target name="compile" depends="clean, makedir">
+	<javac srcdir="${src.dir}" destdir="${build.dir}">
+		<classpath refid="classpath"/>
+	</javac>
+</target>	
+	
+<!--Creates the deployable jar file  -->
+<target name="dist" depends="compile">
+	<jar destfile="${dist.dir}/${name}-${version}.jar" basedir="${build.dir}">
+		<!-- <zipfileset src="${lib.dir}/commons-cli-1.1.jar" /> -->
+		<zipfileset src="${lib.dir}/nxparser-1.2.3.jar" />
+		<manifest>
+			<attribute name="Main-Class" value="${main-class}" />
+		</manifest>
+	</jar>
+</target>
+	
+<!-- Creates Javadocs -->
+<target name="docs" depends="dist" >
+	<javadoc destdir="${docs.dir}" author="true" version="true">
+	    <fileset dir="${src.dir}" />			
+		<classpath refid="classpath"/>		
+	</javadoc>
+</target>	
+		
+</project>
