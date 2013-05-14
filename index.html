@@ -39,34 +39,12 @@
         <section id="main_content">
           <h1>Extracting RDF Relations from Wikipedia’s Tables</h1>
           <h2>Abstract</h2>
-          <p>We propose that existing knowledge-bases can be leveraged
-			to extract high-quality facts (in the form of RDF triples)
-			from relational HTML tables on theWeb. We focus on using
-			the DBpedia knowledge-base to extract facts from tables embedded
-			in Wikipedia articles (henceforth "Wikitables"), for
-			which we can leverage some potential benefits over the general
-			Web-table case. First, many Wikitables contain wikilinks
-			that effectively disambiguate DBpedia entities referred
-			to in cells. Second, the context of the table can be resolved
-			per the article that contains it. Third, we can directly use
-			a legacy knowledge-base (in our case DBpedia) to mine preexisting
-			relations within individual rows of the tables, using
-			them as candidates to identify new relationships and facts
-			aligned with the reference entity-set and schema.
-			We first survey the Wikitables available in a recent dump
-			of Wikipedia to see how much raw data can potentially be
-			exploited by our methods. We then propose methods to
-			extract RDF from these tables: we map table cells to DBpedia
-			resources and, for cells in the same row, we isolate
-			a set of candidate relationships based on existing information
-			in DBpedia for other rows. In order to boost precision,
-			we propose a number of ranking functions for selecting candidate
-			relations during the extraction of RDF. We apply
-			our methods over a recent Wikipedia dump containing over
-			a million tables, where we extract 24 million triples at an
-			estimated accuracy of 50%, and subsequently boost that accuracy
-			to 65% by using machine learning methods to classify
-			19 million triples that are deemed likely to be correct.
+          <p>We propose that existing RDF knowledge-bases can be leveraged to extract facts (in the form of RDF triples) from relational HTML tables on the Web with high accuracy. 
+In particular, we propose methods using the DBpedia knowledge-base to extract facts from tables embedded in Wikipedia articles (henceforth "Wikitables"), effectively
+enriching DBpedia with additional triples. We first survey the Wikitables from a recent dump of Wikipedia to see how much raw data can potentially be exploited by our methods.
+We then propose methods to extract RDF from these tables: we map table cells to DBpedia entities and, for cells in the same row, we isolate a set of candidate 
+relationships based on existing information in DBpedia for other rows. To improve accuracy, we investigate various machine learning methods to classify extracted triples
+as correct or incorrect. We ultimately extract 7.9 million unique novel triples from one million Wikitables at an estimated precision of 81.5%.
 			</p>
 			
 			<h2>Machine learning</h2>
@@ -98,28 +76,44 @@
 			<h2>List of features</h2>
 			<p>For each instance we extract the following list of features used for the machine-learning models.</p>
 			<ol>
-				<li>how many tables are in the page</li>
-				<li>which table the triples came from</li>
-				<li>how many rows are in the table</li>
-				<li>how many columns are in the table</li>
-				<li>which column number the subject came from</li>
-				<li>which column number the object came from</li>
-				<li>is the predicate of the triple in the subject headers</li>
-				<li>is the predicate of the triple in the object headers</li>
-				<li>is the triple new or old (for DBpedia)</li>
-				<li>was extracted from body relations or article relations</li>
-				<li>how many rows the relation held for in this table</li>
-				<li>commonness of the predicate in DBpedia</li>
-				<li>ratio different subjects for this predicate</li>
-				<li>ratio different objects for this predicate</li>
-				<li>multiplicity ratio of predicate</li>
-				<li>how many resources there are in subject cell</li>
-				<li>what is the string length in subject cell</li>
-				<li>how many bullets of lists contains subject cell</li>
-				<li>how many resources there are in object cell</li>
-				<li>what is the string length in object cell</li>
-				<li>how many bullets of lists contains object cell</li>
-				<li>normalized frequency of a relation within the table</li>
+				<li>N° of tables</li>
+				<li>table id in article</li>
+				<li>N° of rows</li>
+				<li>N° of columns</li>
+				<li>ratio: (3)/(4)</li>
+				<li>total relations extracted</li>
+				<li>subject column id</li>
+				<li>object column id</li>
+				<li>N° of entities in subject column</li>
+				<li>N° of entities in object column</li>
+				<li>ratio: (9)/(10)</li>
+				<li>N° of unique entities in subject column</li>
+				<li>N° of unique entities in object column</li>
+				<li>ratio: (12)/(13)</li>
+				<li>potential relations</li>
+				<li>unique potential relations</li>
+				<li>normalised triple count</li>
+				<li>normalised unique subject count</li>
+				<li>normalised unique object count</li>
+				<li>ratio: (18)/(19)</li>
+				<li>N° of entities in subject cell</li>
+				<li>N° of entities in object cell</li>
+				<li>ratio: (21)/(22)</li>
+				<li>string length in subject cell</li>
+				<li>string length in object cell</li>
+				<li>formatting present in subject cell</li>
+				<li>formatting present in object cell</li>
+				<li>string similarity for predicate and subject header</li>
+				<li>string similarity for predicate and object header</li>
+				<li>maximum between (28) and (29)</li>
+				<li>N° of rows where relation holds</li>
+				<li>ratio: (31)/(3)</li>
+				<li>N° of potential relations held</li>
+				<li>ratio: (33)/(15)</li>
+				<li>N° of unique potential relations held</li>
+				<li>ratio: (35)/(16)</li>
+				<li>from article or body relation</li>
+				<li>exists in DBpedia</li>
 			</ol>
 			
 			<h2>Demo</h2>
