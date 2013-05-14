@@ -1,25 +1,40 @@
 # Extracting RDF Relations from Wikipedia’s Tables
 
-This project aims to extract relationships as RDF triples from tables found in Wikipedia's articles. [Link]
+This project aims to extract relationships as RDF triples from tables found in Wikipedia's articles [Link](http://emir-munoz.github.com/wikitables).
 
 ## Abstract
 
-We propose that existing knowledge-bases can be leveraged to extract high-quality facts (in the form of RDF triples) from relational HTML tables on the Web. 
-We focus on using the DBpedia knowledge-base to extract facts from tables embedded in Wikipedia articles (henceforth "Wikitables"), for which we can leverage 
-some potential benefits over the general Web-table case. First, many Wikitables contain wikilinks that effectively disambiguate DBpedia entities referred to 
-in cells. Second, the context of the table can be resolved per the article that contains it. Third, we can directly use a legacy knowledge-base (in our case DBpedia) 
-to mine preexisting relations within individual rows of the tables, using them as candidates to identify new relationships and facts aligned with the reference 
-entity-set and schema. We first survey the Wikitables available in a recent dump of Wikipedia to see how much raw data can potentially be exploited by our methods. 
-We then propose methods to extract RDF from these tables: we map table cells to DBpedia resources and, for cells in the same row, we isolate a set of candidate 
-relationships based on existing information in DBpedia for other rows. In order to boost precision, we propose a number of ranking functions for selecting candidate 
-relations during the extraction of RDF. We apply our methods over a recent Wikipedia dump containing over a million tables, where we extract 24 million triples at 
-an estimated accuracy of 50%, and subsequently boost that accuracy to 65% by using machine learning methods to classify 19 million triples that are deemed likely to be correct.
+We propose that existing RDF knowledge-bases can be leveraged to extract facts (in the form of RDF triples) from relational HTML tables on the Web with high accuracy. 
+In particular, we propose methods using the DBpedia knowledge-base to extract facts from tables embedded in Wikipedia articles (henceforth "Wikitables"), effectively
+enriching DBpedia with additional triples. We first survey the Wikitables from a recent dump of Wikipedia to see how much raw data can potentially be exploited by our methods.
+We then propose methods to extract RDF from these tables: we map table cells to DBpedia entities and, for cells in the same row, we isolate a set of candidate 
+relationships based on existing information in DBpedia for other rows. To improve accuracy, we investigate various machine learning methods to classify extracted triples
+as correct or incorrect. We ultimately extract 7.9 million unique novel triples from one million Wikitables at an estimated precision of 81.5%.
+
+## Packages
+
+The code is modularized in the following packages:
+
+### wikitables-dal-release-1.0
+Contains the classes that represent the model of the entire application.
+
+### wikitables-demo-release-1.0
+The web application built using Spring MVC.
+
+### wikitables-engine-release-1.0
+The core or engine that performs the extraction of the RDF triples.
+
+### wikitables-ml-release-1.0
+For a given set of extracted triples, this performs the prediction and returns correct or incorrect for each triple.
+
+### wikititles-index-release-1.0
+An index used to fill the autocomplete data in the web application.
 
 ## Machine learning
 
-We make available in this repository the training and testing sets used to build our models comprising 1,000 examples altogether.
+We also make available in this repository the training set used to build our machine learning models comprising 503 examples in two formats.
 These can be used to validate our results and try new machine learning schemas.
-The files shows the feature vectors for each example which are formatted using SVMLight format.
+`wikitables-training-set` file shows the feature vectors extracted for each example which are formatted using SVMLight format as follows:
 
 ```bash
 <line> .=. <target> <feature>:<value> <feature>:<value> ... <feature>:<value> # <info>
@@ -30,5 +45,14 @@ The files shows the feature vectors for each example which are formatted using S
 ```
 where the target value and each of the feature/value pairs are separated by a space character. The <code>&lt;info&gt;</code> field contains the URL from where the 
 example cames from and the <code>&lt;s,p,o&gt;</code> RDF triple.
+We also publish an ARFF version `wikitables-training-set.arff` to be used in Weka.
 
-[Link]: http://emir-munoz.github.com/wikitables
+## Demostration
+
+Go to our [demo](http://deri-srvgal36.nuigalway.ie:8080/wikitables-demo/) page, search for some article already in Wikipedia, select a model see how it works.
+
+## License
+
+The program can be used under the terms of the [Apache License, 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
+
+
