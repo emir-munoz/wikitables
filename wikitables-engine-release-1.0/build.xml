@@ -1,0 +1,77 @@
+<project name="wikitables-engine-r" basedir="." default="main">
+    <property name="src.dir"     value="src"/>
+    <property name="build.dir"   value="build"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="jar.dir"     value="${build.dir}/jar"/>
+    <property name="lib.dir"     value="lib"/>
+    <property name="conf.dir"    value="conf"/>
+    <!--<property name="etc.dir"	value="etc"/>-->
+    <property name="version.num" value="2.0.6"/>
+    <property name="jar.memory" value="2000m"/>
+
+    <property name="compile.debug"       value="true"/>
+    <property name="compile.deprecation" value="false"/>
+    <property name="compile.optimize"    value="true"/>
+
+    <tstamp>
+        <format property="TODAY" pattern="yyyy-MM-dd HH:mm:ss" />
+    </tstamp>
+
+    <path id="classpath">
+        <fileset dir="${lib.dir}" includes="*.jar"/>
+    </path>
+
+    <pathconvert property="test.project.manifest.classpath" pathsep=" ">
+        <path refid="classpath"/>
+        <mapper>
+             <chainedmapper>
+                 <flattenmapper/>
+                 <globmapper from="*.jar" to="lib/*.jar"/>
+             </chainedmapper>
+        </mapper>
+    </pathconvert>
+
+    <target name="clean">
+        <delete dir="${classes.dir}"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${classes.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath" debug="${compile.debug}" deprecation="${compile.deprecation}" 
+			optimize="${compile.optimize}" encoding="UTF-8" includeantruntime="false"/>
+        <copy todir="${classes.dir}">         
+            <fileset dir="${conf.dir}" defaultexcludes="yes"></fileset>
+        </copy>
+    	<!--<copy todir="${classes.dir}/${etc.dir}">         
+    	     <fileset dir="${etc.dir}" defaultexcludes="yes"></fileset>
+    	</copy>-->
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="${jar.dir}"/>
+        <jar destfile="${jar.dir}/${ant.project.name}-${version.num}.jar" basedir="${classes.dir}" duplicate="preserve">
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}"/>
+            	<attribute name="Implementation-Version" value="${version.num}"/>
+            	<attribute name="Built-Date" value="${TODAY}"/>
+				<attribute name="Class-Path" value="${test.project.manifest.classpath}"/>
+            </manifest>
+	    <fileset dir="${classes.dir}" includes="**/*.class" />
+	    <!--<zipgroupfileset dir="${lib.dir}" includes="**/*.jar" />-->
+        </jar>
+    </target>
+
+    <target name="run" depends="jar">
+        <java jar="${jar.dir}/${ant.project.name}-${version.num}.jar" fork="true" maxmemory="${jar.memory}"/>
+    </target>
+
+    <target name="copy">
+        <copy file="${jar.dir}/${ant.project.name}-${version.num}.jar" todir="./" overwrite="true"/>
+		<copy file="${jar.dir}/${ant.project.name}-${version.num}.jar" todir="../lib/" overwrite="true"/>
+		<copy file="${jar.dir}/${ant.project.name}-${version.num}.jar" todir="../wikitables-demo-release-1.0/WebContent/WEB-INF/lib/" overwrite="true"/>
+		<copy file="${jar.dir}/${ant.project.name}-${version.num}.jar" todir="../../trunk/wikitables-demo-trunk/WebContent/WEB-INF/lib/" overwrite="true"/>
+    </target>
+
+    <target name="main" depends="clean,jar,copy"/>
+
+</project>
