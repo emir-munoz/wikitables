@@ -11,24 +11,34 @@ We then propose methods to extract RDF from these tables: we map table cells to 
 relationships based on existing information in DBpedia for other rows. To improve accuracy, we investigate various machine learning methods to classify extracted triples
 as correct or incorrect. We ultimately extract 7.9 million unique novel triples from one million Wikitables at an estimated precision of 81.5%.
 
+## Specifications
+
+All the codes are written using Java 6.0 and eclipse framework. To compile, each package contains a `build.xml` file to be used by ant.
+We use English-language data from [DBpedia v3.8](http://wiki.dbpedia.org/Downloads38), describing 9.4 million entities. For answering queries that looks for relation 
+between a pair of resources, we use local indexes of this DBpedia knowledge-base, and for each pair, we perform two atomic on-disk lookups for relations in either direction.
+Important: The used indexes are not included in the repository given their size (ca. 9G), but are available under request. See contact information.
+
 ## Packages
 
-The code is modularized into the following packages:
+The system is modularized into the following packages: 
 
-### wikitables-dal-release-1.0
-Contains the classes that represent the model of the entire application.
+### wikitables-demo
+The web application built using Spring MVC that integrates the extraction and classification of RDF triples.
 
-### wikitables-demo-release-1.0
-The web application built using Spring MVC.
-
-### wikitables-engine-release-1.0
+### wikitables-engine
 The core or engine that performs the extraction of the RDF triples.
 
-### wikitables-ml-release-1.0
-For a given set of extracted triples, this performs the prediction and returns correct or incorrect for each triple.
+### wikitables-ml
+For a given set of extracted triples, this performs the prediction and returns correct or incorrect label for each triple.
 
-### wikititles-index-release-1.0
-An index used to fill the autocomplete data in the web application.
+### wikitables-dal
+Contains the classes that represent the model of the entire application and the access to indexes.
+
+### wikitables-evaluation
+Extract statistics from DBpedia to help in the features definition. 
+
+### wikititles-index
+An index used to fill the autocomplete data in the web application. 
 
 ## Machine learning
 
@@ -49,10 +59,18 @@ We also publish an ARFF version `wikitables-training-set.arff` to be used in Wek
 
 ## Demostration
 
+We have developed an on-line [demo](http://deri-srvgal36.nuigalway.ie:8080/wikitables-demo) of our approach, where we extract RDF relations for a given Wikipedia article. 
+Our system receives a Wikipedia article's title as parameter and uses a selected (or default) machine-learning model to filter the best candidate triples.
 Go to our [demo](http://deri-srvgal36.nuigalway.ie:8080/wikitables-demo/) page, search for some article already in Wikipedia, select a model see how it works.
 
 ## License
 
 The program can be used under the terms of the [Apache License, 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
 
+## Contact
 
+Please do not hesitate to contact us if you have any further questions about this project:
+<emir.munoz@deri.org> and <aidan.hogan@deri.org>
+[Digital Enterprise Research Institute](http://deri.ie/)
+[National University of Ireland](http://www.nuigalway.ie/)
+Galway, Ireland 
