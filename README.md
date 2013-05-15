@@ -54,13 +54,12 @@ These can be used to validate our results and try new machine learning schemas.
 <info> .=. <string> 
 ```
 where the target value and each of the feature/value pairs are separated by a space character. The <code>&lt;info&gt;</code> field contains the URL from where the 
-example cames from and the <code>&lt;s,p,o&gt;</code> RDF triple.
-We also publish an ARFF version `wikitables-training-set.arff` to be used in Weka.
+example cames from and the <code>&lt;s,p,o&gt;</code> RDF triple. We also publish an ARFF version `wikitables-training-set.arff` to be used in Weka.
 
 ## Demostration
 
 We have developed an on-line [demo](http://deri-srvgal36.nuigalway.ie:8080/wikitables-demo) of our approach, where we extract RDF relations for a given Wikipedia article. 
-Our system receives a Wikipedia article's title as parameter and uses a selected (or default) machine-learning model to filter the best candidate triples.
+Our system receives a Wikipedia article's title as parameter and uses a selected (or default) machine-learning model to filter the best candidate triples.  
 Go to our [demo](http://deri-srvgal36.nuigalway.ie:8080/wikitables-demo/) page, search for some article already in Wikipedia, select a model see how it works.
 
 ## License
