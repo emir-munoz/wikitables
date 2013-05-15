@@ -77,15 +77,15 @@ dbr:Danny_Hoesen dbp:currentclub dbr:AFC_Ajax .</pre></p>
 						<h1>Architecture</h1>
 					</div>
 					<h2>Specifications</h2>
-					<p>All the codes are written using Java 6.0 and eclipse framework. To compile, each package contains a <code>built.xml</code> file to be used by ant. </p>
-					<p>We use English-language data from <a href="http://wiki.dbpedia.org/Downloads38">DBpedia v3.8</a>, describing 9.4 million entities. For answering queries that looks for relation between a pair of resources, we use local indexes of this DBpedia knowledge-base, and for each pair, we perform two atomic on-disk lookups for relations in either direction. </p>
+					<p>All the codes are written using Java 6.0 and eclipse framework. To compile, each package contains a <code>build.xml</code> file to be used by ant. </p>
+					<p>We use English-language data from <a href="http://wiki.dbpedia.org/Downloads38">DBpedia v3.8</a>, describing 9.4 million entities. For answering queries that look for relations between a pair of resources, we use local indexes of DBpedia knowledge-base, and for each pair, we perform two atomic on-disk lookups for relations in either direction. </p>
 					<p><span class="label label-important">Important</span> The used indexes are not included in the repository given their size (ca. 9G), but are available under request. See <a href="#contact">contact</a> information.</p>
 					<h2>Packages</h2>
 					<p>The system is modularized into the following packages: </p>
 					<div class="row-fluid">
 						<div class="span4">
 						  <h2>Wikitables-demo</h2>
-						  <p>The web application built using Spring MVC. </p>
+						  <p>The web application built using Spring MVC that integrates the extraction and classification of RDF triples. </p>
 						</div><!--/span-->
 						<div class="span4">
 							<h2>Wikitables-engine</h2>
@@ -93,7 +93,7 @@ dbr:Danny_Hoesen dbp:currentclub dbr:AFC_Ajax .</pre></p>
 						</div><!--/span-->
 						<div class="span4">
 							<h2>Wikitables-ml</h2>
-							<p>For a given set of extracted triples, this performs the prediction and returns correct or incorrect for each triple. </p>
+							<p>For a given set of extracted triples, this performs the prediction and returns correct or incorrect label for each triple. </p>
 						</div><!--/span-->
 					</div><!--/row-->
 					<div class="row-fluid">
@@ -116,8 +116,8 @@ dbr:Danny_Hoesen dbp:currentclub dbr:AFC_Ajax .</pre></p>
 					<div class="page-header">
 						<h1>Machine Learning</h1>
 					</div>
-					<p>We make available in this repository the training and testing sets used to built our models comprising 1,000 examples altogether. 
-					These can be used to validate our results and try new machine learning schemas. Files contain a feature vector for an example per line which is formatted using SVMLight format.</p>
+					<p>We also make available in this repository the training set used to build our machine learning models comprising 503 examples in two formats.
+						These can be used to validate our results and try new machine learning schemas. <code>wikitables-training-set</code> file shows the feature vectors extracted for each example which are formatted using SVMLight format as follows:</p>
 					<pre class="prettyprint lang-basic" style="font-size:10pt;">
 &lt;line&gt; .=. &lt;target&gt; &lt;feature&gt;:&lt;value&gt; &lt;feature&gt;:&lt;value&gt; ... &lt;feature&gt;:&lt;value&gt; # &lt;info&gt;
 &lt;target&gt; .=. +1 | -1
@@ -214,14 +214,31 @@ dbr:Danny_Hoesen dbp:currentclub dbr:AFC_Ajax .</pre></p>
 					</div>
 				</section>
 
+				<section id="how-to-use">
+					<div class="page-header">
+						<h1>How to use it?</h1>
+					</div>
+					<p>You can deploy the demo <code>wikitables-demo-release-1.0</code> in for example a Tomcat 6 server. Follow this checklist:
+						<ol>
+							<li>Update the paths in the file <code>build.properties</code> according your tomcat configuration.</li>
+							<li>Update the paths in the file <code>/WebContent/WEB-INF</code> with the paths to the root folder, models and indexes.</li>
+							<li>Build and copy the project into tomcat using <code>ant deploy</code>.</li>
+							<li>Go to http://localhost/wikitables-demo-1.0 in your browser.</li>
+						</ol>
+					</p>
+				</section>
+
 				<section id="demo">
 					<div class="page-header">
 						<h1>Demostration</h1>
 					</div>
-					<p>We have developed an on-line <a href="http://deri-srvgal36.nuigalway.ie:8080/wikitables-demo" target="_blank"><button class="btn btn-mini btn-primary" type="button">demo</button></a> of our approach, where we extract RDF relations for a given Wikipedia article. Our system receives a URL as parameter and uses a selected
-					(or default) machine-learning model to filter the best candidate triples.<br>
+					<p>We have developed an on-line <a href="http://deri-srvgal36.nuigalway.ie:8080/wikitables-demo" target="_blank"><button class="btn btn-mini btn-primary" type="button">demo</button></a> of our approach, where we extract RDF relations for a given Wikipedia article. Our system receives a Wikipedia article's title as parameter and uses a selected (or default) machine-learning model to filter the best candidate triples.<br>
 					<a href="http://deri-srvgal36.nuigalway.ie:8080/wikitables-demo"><img src="img/demo.png"></a>
 					</p>
+				</section>
+
+				<section id="license">
+					The program can be used under the terms of the </a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, 2.0</a>.
 				</section>
 
 				<section id="contact">
