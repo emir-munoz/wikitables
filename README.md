@@ -69,8 +69,8 @@ The program can be used under the terms of the [Apache License, 2.0](http://www.
 
 ## Contact
 
-Please do not hesitate to contact us if you have any further questions about this project:
-<emir.munoz@deri.org> and <aidan.hogan@deri.org>
-[Digital Enterprise Research Institute](http://deri.ie/)
-[National University of Ireland](http://www.nuigalway.ie/)
-Galway, Ireland 
+Please do not hesitate to contact us if you have any further questions about this project:  
+<emir.munoz@deri.org> and <aidan.hogan@deri.org>  
+[Digital Enterprise Research Institute](http://deri.ie/)  
+[National University of Ireland](http://www.nuigalway.ie/)  
+Galway, Ireland  
