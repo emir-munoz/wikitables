@@ -56,13 +56,23 @@ These can be used to validate our results and try new machine learning schemas.
 where the target value and each of the feature/value pairs are separated by a space character. The <code>&lt;info&gt;</code> field contains the URL from where the 
 example cames from and the <code>&lt;s,p,o&gt;</code> RDF triple. We also publish an ARFF version `wikitables-training-set.arff` to be used in Weka.
 
-## Demostration
+## How to use it?
+
+You can deploy the demo `wikitables-demo-release-1.0` in for example a Tomcat 6 server. Follow this checklist:
+1. Update the paths in the file `build.properties` according your tomcat configuration.
+2. Update the paths in the file `/WebContent/WEB-INF` with the paths to the root folder, models and indexes.
+3. Build all the packages with the supplied script `makeWikitables.sh`.
+4. Build and copy the web project into tomcat using `ant deploy`.
+5. Restart your tomcat.
+6. Go to http://localhost/wikitables-demo-1.0 in your browser.
+
+### Demostration
 
 We have developed an on-line [demo](http://deri-srvgal36.nuigalway.ie:8080/wikitables-demo) of our approach, where we extract RDF relations for a given Wikipedia article. 
 Our system receives a Wikipedia article's title as parameter and uses a selected (or default) machine-learning model to filter the best candidate triples.  
 Go to our [demo](http://deri-srvgal36.nuigalway.ie:8080/wikitables-demo/) page, search for some article already in Wikipedia, select a model see how it works.
 
-## License
+### License
 
 The program can be used under the terms of the [Apache License, 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
 
