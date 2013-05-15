@@ -68,20 +68,18 @@
 						as correct or incorrect. We ultimately extract 7.9 million unique novel triples from one million Wikitables at an estimated precision of 81.5%.
 					</p>
 					<h2>Motivating Example</h2>
-					<p><img src="/img/ajax-six.png"> presents a Wikitable abridged from the "AFC Ajax" Wikipedia article, containing relations between players, their shirt number,
+					<p><img src="img/ajax-six.png"> presents a Wikitable abridged from the "AFC Ajax" Wikipedia article, containing relations between players, their shirt number,
 						country and position. There are also relations between players and the entity described by the article (their current club is AFC Ajax).
 						Suppose the following SPARQL query to find relations between the context entity and various entities mentioned in the table cells:
 						<pre class="prettyprint lang-basic" style="font-size:10pt;">
-SELECT ?rel WHERE { dbr:Kenneth_Vermeer ?rel dbr:AFC_Ajax }
-						</pre>
+SELECT ?rel WHERE { dbr:Kenneth_Vermeer ?rel dbr:AFC_Ajax }</pre>
 						returns the relationship <code>dbp:currentclub</code>. We find DBpedia triples with predicate <code>dbp:currentclub</code> relating 9/12 entities in the
 						<b>Player</b> to the protagonist <code>dbr:AFC_Ajax</code>. For the remaining three players in those columns, we can thus suggest the following triples as
 						candidates for extraction:
 						<pre class="prettyprint lang-basic" style="font-size:10pt;">
 dbr:Niklas_Moisander dbp:currentclub dbr:AFC_Ajax .
 dbr:Christian_Poulsen dbp:currentclub dbr:AFC_Ajax .
-dbr:Danny_Hoesen dbp:currentclub dbr:AFC_Ajax .
-						</pre>
+dbr:Danny_Hoesen dbp:currentclub dbr:AFC_Ajax .</pre>
 					</p>
 				</section>
 				<section id="architecture">
