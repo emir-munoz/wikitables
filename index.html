@@ -42,18 +42,13 @@
 						<li><a href="#machine-learning">Machine Learning</a></li>
 						<li><a href="#demo">Demostration</a></li>
 						<li><a href="#contact">Contact</a></li>
-<!--
-						<li class="nav-header">Sidebar</li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
--->
 						<li class="nav-header">Downloads</li>
 						<li><a href="https://github.com/emir-munoz/wikitables/zipball/master" id="download-zip" class="button">
-							<img src="img/zip-icon.png" width="25"><span>Download .zip</span></a></li>
+							<img src="img/zip-icon.png" width="25">&nbsp;&nbsp;<span>Download .zip</span></a></li>
 						<li><a href="https://github.com/emir-munoz/wikitables/tarball/master" id="download-tar-gz" class="button">
-							<img src="img/tar-gz-icon.png" width="25"><span>Download .tar.gz</span></a></li>
+							<img src="img/tar-gz-icon.png" width="25">&nbsp;&nbsp;<span>Download .tar.gz</span></a></li>
 						<li><a href="https://github.com/emir-munoz/wikitables" id="view-on-github" class="button" target="_blank">
-							<img src="img/octocat-icon.png" width="25"><span>View on GitHub</span></a></li>
+							<img src="img/octocat-icon.png" width="25">&nbsp;&nbsp;<span>View on GitHub</span></a></li>
 					</ul>
 				<!--</div>/.well -->
 			</div>
@@ -63,13 +58,8 @@
 						<h1>Extracting RDF Relations from Wikipedia’s Tables</h1>
 					</div>
 					<h2>Abstract</h2>
-					<p>We propose that existing RDF knowledge-bases can be leveraged to extract facts (in the form of RDF triples) from relational HTML tables on the Web with high accuracy. 
-						In particular, we propose methods using the DBpedia knowledge-base to extract facts from tables embedded in Wikipedia articles (henceforth "Wikitables"), effectively
-						enriching DBpedia with additional triples. We first survey the Wikitables from a recent dump of Wikipedia to see how much raw data can potentially be exploited by our methods.
-						We then propose methods to extract RDF from these tables: we map table cells to DBpedia entities and, for cells in the same row, we isolate a set of candidate 
-						relationships based on existing information in DBpedia for other rows. To improve accuracy, we investigate various machine learning methods to classify extracted triples
-						as correct or incorrect. We ultimately extract 7.9 million unique novel triples from one million Wikitables at an estimated precision of 81.5%.
-					</p>
+					<p>We propose that existing RDF knowledge-bases can be leveraged to extract facts (in the form of RDF triples) from relational HTML tables on the Web with high accuracy. In particular, we propose methods using the DBpedia knowledge-base to extract facts from tables embedded in Wikipedia articles (henceforth "Wikitables"), effectively enriching DBpedia with additional triples. We first survey the Wikitables from a recent dump of Wikipedia to see how much raw data can potentially be exploited by our methods. We then propose methods to extract RDF from these tables: we map table cells to DBpedia entities and, for cells in the same row, we isolate a set of candidate relationships based on existing information in DBpedia for other rows. To improve accuracy, we investigate various machine learning methods to classify extracted triples as correct or incorrect. We ultimately extract 7.9 million unique novel triples from one million Wikitables at an estimated precision of 81.5%.</p>
+					
 					<h2>Motivating Example</h2>
 					<p><img src="img/ajax-six.png"><br>
 						This image presents a Wikitable abridged from the "<a href="http://en.wikipedia.org/wiki/AFC_Ajax">AFC Ajax</a>" Wikipedia article, containing relations between players, their shirt number, country and position. There are also relations between players and the entity described by the article (their current club is AFC Ajax). Suppose the following SPARQL query to find relations between the context entity and various entities mentioned in the table cells:
@@ -79,15 +69,17 @@ SELECT ?rel WHERE { dbr:Kenneth_Vermeer ?rel dbr:AFC_Ajax }</pre>
 						<pre class="prettyprint lang-basic" style="font-size:10pt;">
 dbr:Niklas_Moisander dbp:currentclub dbr:AFC_Ajax .
 dbr:Christian_Poulsen dbp:currentclub dbr:AFC_Ajax .
-dbr:Danny_Hoesen dbp:currentclub dbr:AFC_Ajax .</pre>
-					</p>
+dbr:Danny_Hoesen dbp:currentclub dbr:AFC_Ajax .</pre></p>
 				</section>
+
 				<section id="architecture">
 					<div class="page-header">
 						<h1>Architecture</h1>
 					</div>
-					<h2>Language</h2>
-					<p>The code is written using Java 6.0.</p>
+					<h2>Specifications</h2>
+					<p>All the codes are written using Java 6.0 and eclipse framework. To compile, each package contains a <code>built.xml</code> file to be used by ant. </p>
+					<p>We use English-language data from <a href="http://wiki.dbpedia.org/Downloads38">DBpedia v3.8</a>, describing 9.4 million entities. For answering queries that looks for relation between a pair of resources, we use local indexes of this DBpedia knowledge-base, and for each pair, we perform two atomic on-disk lookups for relations in either direction. </p>
+					<p><span class="label label-important">Important</span> The used indexes are not included in the repository given their size (ca. 9G), but are available under request. See <a href="#contact">contact</a> information.</p>
 					<h2>Packages</h2>
 					<p>The system is modularized into the following packages: </p>
 					<div class="row-fluid">
@@ -119,6 +111,7 @@ dbr:Danny_Hoesen dbp:currentclub dbr:AFC_Ajax .</pre>
 						</div><!--/span-->
 					</div><!--/row-->
 				</section>
+
 				<section id="machine-learning">
 					<div class="page-header">
 						<h1>Machine Learning</h1>
@@ -220,16 +213,17 @@ dbr:Danny_Hoesen dbp:currentclub dbr:AFC_Ajax .</pre>
 						</div>
 					</div>
 				</section>
+
 				<section id="demo">
 					<div class="page-header">
 						<h1>Demostration</h1>
 					</div>
-					<p>We have developed an on-line <a href="http://deri-srvgal36.nuigalway.ie:8080/wikitables-demo" target="_blank"><button class="btn btn-mini btn-primary" type="button">demo</button></a> of our approach, 
-					where we extract RDF relations for a given Wikipedia article. Our system receives a URL as parameter and uses a selected
-					(or default) machine-learning model to filter the best candidate triples.
+					<p>We have developed an on-line <a href="http://deri-srvgal36.nuigalway.ie:8080/wikitables-demo" target="_blank"><button class="btn btn-mini btn-primary" type="button">demo</button></a> of our approach, where we extract RDF relations for a given Wikipedia article. Our system receives a URL as parameter and uses a selected
+					(or default) machine-learning model to filter the best candidate triples.<br>
 					<a href="http://deri-srvgal36.nuigalway.ie:8080/wikitables-demo"><img src="img/demo.png"></a>
 					</p>
 				</section>
+
 				<section id="contact">
 					<div class="page-header">
 						<h1>Contact</h1>
@@ -260,11 +254,8 @@ dbr:Danny_Hoesen dbp:currentclub dbr:AFC_Ajax .</pre>
 		<p>© Emir Mu&ntilde;oz 2013</p>
 	</footer>
     
-    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
-    <script src="http://code.jquery.com/jquery.js"></script>
-<!--
-    <script src="js/bootstrap.js"></script>
--->
+	<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+	<script src="http://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap-transition.js"></script>
 	<script src="js/bootstrap-alert.js"></script>
 	<script src="js/bootstrap-modal.js">
@@ -279,5 +270,5 @@ dbr:Danny_Hoesen dbp:currentclub dbr:AFC_Ajax .</pre>
 	<script src="js/bootstrap-typeahead.js"></script>
 	<script src="js/bootstrap-affix.js"></script>
 	<script src="js/prettify.js"></script>
-  </body>
+	</body>
 </html>
