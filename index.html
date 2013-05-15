@@ -38,7 +38,7 @@
 					<ul class="nav nav-list bs-docs-sidenav affix">
 						<li class="nav-header">Wikitables</li>
 						<li class="active"><a href="#introduction">Introduction</a></li>
-						<li><a href="#packages">Packages</a></li>
+						<li><a href="#architecture">Architecture</a></li>
 						<li><a href="#machine-learning">Machine Learning</a></li>
 						<li><a href="#demo">Demostration</a></li>
 						<li><a href="#contact">Contact</a></li>
@@ -67,11 +67,30 @@
 						relationships based on existing information in DBpedia for other rows. To improve accuracy, we investigate various machine learning methods to classify extracted triples
 						as correct or incorrect. We ultimately extract 7.9 million unique novel triples from one million Wikitables at an estimated precision of 81.5%.
 					</p>
+					<h2>Motivating Example</h2>
+					<p><img src="/img/ajax-six.png"> presents a Wikitable abridged from the "AFC Ajax" Wikipedia article, containing relations between players, their shirt number,
+						country and position. There are also relations between players and the entity described by the article (their current club is AFC Ajax).
+						Suppose the following SPARQL query to find relations between the context entity and various entities mentioned in the table cells:
+						<pre class="prettyprint lang-basic" style="font-size:10pt;">
+							SELECT ?rel WHERE { dbr:Kenneth_Vermeer ?rel dbr:AFC_Ajax }
+						</pre>
+						returns the relationship <code>dbp:currentclub</code>. We find DBpedia triples with predicate <code>dbp:currentclub</code> relating 9/12 entities in the
+						<b>Player</b> to the protagonist <code>dbr:AFC_Ajax</code>. For the remaining three players in those columns, we can thus suggest the following triples as
+						candidates for extraction:
+						<pre class="prettyprint lang-basic" style="font-size:10pt;">
+							dbr:Niklas_Moisander dbp:currentclub dbr:AFC_Ajax .
+							dbr:Christian_Poulsen dbp:currentclub dbr:AFC_Ajax .
+							dbr:Danny_Hoesen dbp:currentclub dbr:AFC_Ajax .
+						</pre>
+					</p>
 				</section>
-				<section id="packages">
+				<section id="architecture">
 					<div class="page-header">
-						<h1>Packages of the system</h1>
+						<h1>Architecture</h1>
 					</div>
+					<h2>Language</h2>
+					<p>The code is written using Java 6.0.</p>
+					<h2>Packages</h2>
 					<p>The system is modularized into the following packages: </p>
 					<div class="row-fluid">
 						<div class="span4">
@@ -182,15 +201,15 @@
 					</div>
 					<p>Please do not hesitate to contact us if you have any further questions about this project:<br/>
 					<a href="mailto:emir.munoz at deri dot org">
-					emir.munoz<img src="./images/at.gif" alt="at">deri<span>.</span>org
+					emir.munoz<img src="/img/at.gif" alt="at">deri<span>.</span>org
 					</a>
 					&nbsp;and&nbsp;
 					<a href="mailto:aidan.hogan at deri dot org">
-						aidan.hogan<img src="./images/at.gif" alt="at">deri<span>.</span>org
+						aidan.hogan<img src="img/at.gif" alt="at">deri<span>.</span>org
 					</a>
 					<br/><br/>
-					<img src="./images/DERI_brandmark_rgb.jpg" height="60" width="120" title="Digital Enterprise Research Institute"/>
-					<img src="./images/nuig_logo.png" height="60" width="200" title="National University of Ireland"/><br>
+					<img src="/img/DERI_brandmark_rgb.jpg" height="60" width="120" title="Digital Enterprise Research Institute"/>
+					<img src="/img/nuig_logo.png" height="60" width="200" title="National University of Ireland"/><br>
 					<a	 id="deri-logo" href="http://deri.ie">Digital Enterprise Research Institute</a><br/>
 					<a id="nuig-logo" href="http://www.nuigalway.ie">National University of Ireland</a><br/>
 					Galway, Ireland
