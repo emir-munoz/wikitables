@@ -72,15 +72,15 @@
 						country and position. There are also relations between players and the entity described by the article (their current club is AFC Ajax).
 						Suppose the following SPARQL query to find relations between the context entity and various entities mentioned in the table cells:
 						<pre class="prettyprint lang-basic" style="font-size:10pt;">
-							SELECT ?rel WHERE { dbr:Kenneth_Vermeer ?rel dbr:AFC_Ajax }
+SELECT ?rel WHERE { dbr:Kenneth_Vermeer ?rel dbr:AFC_Ajax }
 						</pre>
 						returns the relationship <code>dbp:currentclub</code>. We find DBpedia triples with predicate <code>dbp:currentclub</code> relating 9/12 entities in the
 						<b>Player</b> to the protagonist <code>dbr:AFC_Ajax</code>. For the remaining three players in those columns, we can thus suggest the following triples as
 						candidates for extraction:
 						<pre class="prettyprint lang-basic" style="font-size:10pt;">
-							dbr:Niklas_Moisander dbp:currentclub dbr:AFC_Ajax .
-							dbr:Christian_Poulsen dbp:currentclub dbr:AFC_Ajax .
-							dbr:Danny_Hoesen dbp:currentclub dbr:AFC_Ajax .
+dbr:Niklas_Moisander dbp:currentclub dbr:AFC_Ajax .
+dbr:Christian_Poulsen dbp:currentclub dbr:AFC_Ajax .
+dbr:Danny_Hoesen dbp:currentclub dbr:AFC_Ajax .
 						</pre>
 					</p>
 				</section>
@@ -193,18 +193,20 @@
 					</div>
 					<p>We have developed an on-line <a href="http://deri-srvgal36.nuigalway.ie:8080/wikitables-demo" target="_blank">demo</a> of our approach, 
 					where we extract RDF relations for a given Wikipedia article. Our system receives a URL as parameter and uses a selected
-					(or default) machine-learning model to filter the best candidate triples.</p>
+					(or default) machine-learning model to filter the best candidate triples.
+					<img src="/img/demo.png">
+					</p>
 				</section>
 				<section id="contact">
 					<div class="page-header">
 						<h1>Contact</h1>
 					</div>
 					<p>Please do not hesitate to contact us if you have any further questions about this project:<br/>
-					<a href="mailto:emir.munoz at deri dot org">
+					<i class="icon-envelope"></i><a href="mailto:emir.munoz at deri dot org">
 					emir.munoz<img src="/img/at.gif" alt="at">deri<span>.</span>org
 					</a>
 					&nbsp;and&nbsp;
-					<a href="mailto:aidan.hogan at deri dot org">
+					<i class="icon-envelope"></i><a href="mailto:aidan.hogan at deri dot org">
 						aidan.hogan<img src="img/at.gif" alt="at">deri<span>.</span>org
 					</a>
 					<br/><br/>
