@@ -156,9 +156,10 @@ public class ProcessWikipageController
 					watch.elapsedTime()));
 		} catch (Exception e)
 		{
-			_log.info(String.format("##ERROR## processing query: %s, Message: ", query, e.getMessage()));
+			_log.info(String.format("##ERROR## processing query: %s, Message: %s", query, e.getMessage()));
+			e.printStackTrace();
 			resp.setType("error");
-			resp.setText(e.getMessage());
+			resp.setText(String.format("We did not found any relation in %s article", query));
 		}
 
 		return resp;

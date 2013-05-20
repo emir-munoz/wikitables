@@ -82,9 +82,8 @@ public class WikiTableTriplesDemo
 	/**
 	 * Constructor of WikiTableTriplesDemo
 	 * 
-	 * @param _workspace Configuration 'server' or 'local'.
+	 * @param properties Configuration with paths.
 	 */
-	// public WikiTableTriplesDemo(String _workspace)
 	public WikiTableTriplesDemo(Properties properties)
 	{
 		// initialize class
@@ -945,16 +944,27 @@ public class WikiTableTriplesDemo
 	{
 		DOMConfigurator.configure("./conf/log4j.xml");
 
-		Properties prop = new Properties();
-		prop.put("SERVER_FOLDER", "/data/wikitables-demo");
-		// add other properties
-		WikiTableTriplesDemo triples = new WikiTableTriplesDemo(prop);
+		Properties props = new Properties();
+		props.put("SERVER_FOLDER", "/home/emir/Work/engineering/wikipedia-tables/trunk/wikitables-engine-trunk");
+		props.put("REDIRECT_INDEX", "/db38/redirects.ni");
+		props.put("REDIRECT_SPARSE", "/db38/redirects.sp");
+		props.put("LABELS_INDEX", "/db38/labels.ni");
+		props.put("LABELS_SPARSE", "/db38/labels.sp");
+		props.put("LABELS_EXCEPTIONS", "/db38/exceptions");
+		props.put("DBPEDIA38_INDEX", "/db38/dbpedia38.en.ni");
+		props.put("DBPEDIA38_SPARSE", "/db38/dbpedia38.en.sp");
+		props.put("PREDICATES_STAT", "/db38/pred-stats.dat");
+		props.put("TITLE_INDEX", "/index/index-title");
+		props.put("NUM_TITLES", 25);
+
+		WikiTableTriplesDemo triples = new WikiTableTriplesDemo(props);
 
 		// put an URL to analyze directly from Wikipedia
-		String article = "Johny_Depp";
+		String article = "Comparison_of_IDEs";
 		try
 		{
 			triples.init(article);
+			System.out.println(triples.getCandidateTriples().getCandidateTriples().size());
 		} catch (Exception e)
 		{
 			_log.error(String.format("Error in WikiTableTriplesDemo processing article: \"%s\" --- %s", article,

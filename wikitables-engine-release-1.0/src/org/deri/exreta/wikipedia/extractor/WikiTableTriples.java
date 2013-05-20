@@ -92,14 +92,6 @@ public class WikiTableTriples
 		if (properties != null)
 		{
 			sparql = new DBpediaDAO(properties);
-			// if (_workspace.equalsIgnoreCase("local"))
-			// WORKSPACE = LocationConstants.LOCAL_FOLDER;
-			// else if (_workspace.equalsIgnoreCase("server"))
-			// WORKSPACE = LocationConstants.SERVER_FOLDER;
-			// else if (_workspace.equalsIgnoreCase("test"))
-			// WORKSPACE = LocationConstants.SERVER_TEST;
-			// else
-			// WORKSPACE = _workspace;
 			WORKSPACE = properties.getProperty("SERVER_FOLDER");
 		} else
 			_log.fatal("Error initialization of WikiTableTriples workspace null");
@@ -1111,15 +1103,15 @@ public class WikiTableTriples
 		DOMConfigurator.configure("./conf/log4j.xml");
 
 		// Read parameter split name which contains the set of HTML files
-		if (args.length < 2)
-		{
-			System.err.println("Enter the split name and machine name. e.g., \"split_1 deri-srvgal20\"");
-			System.exit(0);
-		}
-		// String spName = "split_27";
-		// String machine = "local";
-		String spName = args[0];
-		String machine = args[1];
+		// if (args.length < 2)
+		// {
+		// System.err.println("Enter the split name and machine name. e.g., \"split_1 deri-srvgal20\"");
+		// System.exit(0);
+		// }
+		String spName = "split_27";
+		String machine = "local";
+		// String spName = args[0];
+		// String machine = args[1];
 
 		split = spName + "/";
 		outputFilename = "./triples-" + spName + ".out";
@@ -1127,8 +1119,21 @@ public class WikiTableTriples
 
 		// test, local, server
 		Properties props = new Properties();
-		props.put("SERVER_FOLDER", args[2]);
+		//props.put("SERVER_FOLDER", args[2]);
+		
+		props.put("SERVER_FOLDER", "/home/emir/Work/engineering/wikipedia-tables/trunk/wikitables-engine-trunk");
+		props.put("REDIRECT_INDEX", "/db38/redirects.ni");
+		props.put("REDIRECT_SPARSE", "/db38/redirects.sp");
+		props.put("LABELS_INDEX", "/db38/labels.ni");
+		props.put("LABELS_SPARSE", "/db38/labels.sp");
+		props.put("LABELS_EXCEPTIONS", "/db38/exceptions");
+		props.put("DBPEDIA38_INDEX", "/db38/dbpedia38.en.ni");
+		props.put("DBPEDIA38_SPARSE", "/db38/dbpedia38.en.sp");
+		props.put("PREDICATES_STAT", "/db38/pred-stats.dat");
+		props.put("TITLE_INDEX", "/index/index-title");
+		props.put("NUM_TITLES", 25);
 		// add other properties
+		
 		WikiTableTriples triples = new WikiTableTriples(props, machine);
 
 		// put an URL to analyze directly from Wikipedia
@@ -1139,7 +1144,7 @@ public class WikiTableTriples
 		// KJEE
 		// Bob_Anderson_(racing_driver)
 		// String article = "KJEE";
-		String article = "";
+		String article = "Comparison_of_IDEs";
 		try
 		{
 			triples.init(article);

@@ -11,6 +11,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 <meta content="width=device-width,initial-scale=1" name="viewport">
+<meta content="Emir Muñoz" name="author">
+<meta
+	content="RDF, Wikipedia, DBpedia, Relation Extraction, Tables, Webtables"
+	name="keywords">
+<meta content="DERI RDF Relations Extraction from Wikipedia's Tables"
+	name="description">
 <style type="text/css" title="currentStyle">
 @import "css/style.css";
 
@@ -30,8 +36,8 @@
 	<div id="bcontainer">
 		<div id="body">
 			<div class="title home">
-				<h1>ExReTa</h1>
-				<div>Extracting RDF Relations from Wikipedia's Tables</div>
+				<h1>DRETa</h1>
+				<div>DERI RDF Relations Extraction from Wikipedia's Tables</div>
 			</div>
 			<div class="search">
 				<span>http://en.wikipedia.org/wiki/</span> <input id="wikiquery"
@@ -40,8 +46,8 @@
 					class="buttonSubmit" value="extraction">
 			</div>
 			<div class="note examples">
-				<small> examples of articles: Johnny Depp, Manchester United
-					F.C., Galway, 2010 Chile earthquake, Comparison of IDEs</small><br> <select
+				<small> examples of articles: Manchester United F.C., Johnny
+					Depp, Galway, 2010 Chile earthquake, Comparison of IDEs</small><br> <select
 					id="modelSelect">
 					<option value="naive-bayes">Naive Bayes (Threshold:
 						0.4317)</option>
@@ -88,36 +94,39 @@
 	<div id="help">
 		<a href="" id="helpBtn" type="button"><img border="0" width="45"
 			src="css/images/help.png" alt="Help"></a> <br> <a
-			href="https://github.com/emir-munoz/wikitables" target="_blank"
+			href="http://emir-munoz.github.com/wikitables" target="_blank"
 			id="codeBtn" type="button"><img border="0" width="40"
 			src="css/images/github.png" alt="Source code"></a>
 	</div>
 	<!-- HELP WINDOW -->
 	<div id="helpModal" class="reveal-modal" style="overflow: auto;">
-		<h1>Extracting Relations from Wikipedia's Tables - ExReTa</h1>
+		<h1>Extracting Relations from Wikipedia's Tables - DRETa</h1>
 		<p>
-			ExReTa is a system that mine relational HTML tables in Wikipedia
+			DRETa is a system that mine relational HTML tables in Wikipedia's
 			articles to extract RDF triples. Using <a
-				href="http://wiki.dbpedia.org/Downloads38">DBpedia 3.8</a> as
-			knowledge-base, we identify resources at a row level and then
+				href="http://wiki.dbpedia.org/Downloads38" target="_blank">DBpedia
+				3.8</a> as knowledge-base, we identify resources at a row level and then
 			relations among those resources. Applying some machine-learning
 			models we filter and display the best candidates.
 		</p>
-		<h2>How to use ExReTa?</h2>
+		<h2>How to use DRETa?</h2>
 		<p>
-			You can <strong>search</strong> for any title of a Wikipedia article
+			You can <strong>search</strong> for any title of a Wikipedia's article
 			which contains relational tables (<i>wikitables</i>); <strong>select</strong>
-			a machine-learning model or use default; and ExReTa will display the
+			a machine-learning model or use default; and DRETa will display the
 			extracted triples. Also you can <strong>filter</strong> by confidence
 			and even <strong>export</strong> the results.
 		</p>
-		<h2>How ExReTa works?</h2>
+		<h2>How DRETa works?</h2>
 		<p>
 			For a given <i>wikitable</i>: map table cells to DBpedia resources
 			and, for cells in the same row, identify relationships based on
 			existing information in DBpedia for other rows. We state that if some
 			relationship is held for most rows with certain features, should be
-			held by all rows.
+			held by all rows.<br> <b>You can take a look into our <a
+				href="https://github.com/emir-munoz/wikitables" target="_blank">code</a>
+				and see the documentation in our <a
+				href="http://emunoz.org/wikitables/" target="_blank">web-page</a></b>.
 		</p>
 		<a class="close-reveal-modal">&#215;</a>
 		<p align="center">
