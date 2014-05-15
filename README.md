@@ -59,6 +59,7 @@ example cames from and the <code>&lt;s,p,o&gt;</code> RDF triple. We also publis
 ## How to use it?
 
 You can deploy the demo `wikitables-demo-release-1.0` in for example a Tomcat 6 server. Follow this checklist:
+
 1. Update the paths in the file `build.properties` according your tomcat configuration.
 2. Update the paths in the file `/WebContent/WEB-INF` with the paths to the root folder, models and indexes.
 3. Build all the packages with the supplied script `makeWikitables.sh`.
