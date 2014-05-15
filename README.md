@@ -68,9 +68,9 @@ You can deploy the demo `wikitables-demo-release-1.0` in for example a Tomcat 6 
 
 ### Demostration
 
-We have developed an on-line [demo](http://deri-srvgal36.nuigalway.ie:8080/wikitables-demo) of our approach, where we extract RDF relations for a given Wikipedia article. 
+We have developed an on-line [demo](http://deri-srvgal25.nuigalway.ie:8080/wikitables-demo) of our approach, where we extract RDF relations for a given Wikipedia article. 
 Our system receives a Wikipedia article's title as parameter and uses a selected (or default) machine-learning model to filter the best candidate triples.  
-Go to our [demo](http://deri-srvgal36.nuigalway.ie:8080/wikitables-demo/) page, search for some article already in Wikipedia, select a model see how it works.
+Go to our [demo](http://deri-srvgal25.nuigalway.ie:8080/wikitables-demo/) page, search for some article already in Wikipedia, select a model see how it works.
 
 ### License
 
